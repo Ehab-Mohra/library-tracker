@@ -1,1 +1,2 @@
 Practice notes for Git drills
+Work in progress - not finished yet
