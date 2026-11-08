@@ -46,7 +46,11 @@ public class Library {
     }
 
     // ===== Student A: feature/add-list-books =====
-      public void addBook(String title, String author) {
+    public void addBook(String title, String author) {
+        if (title.isEmpty() || author.isEmpty()) {
+            System.out.println("Title and author cannot be empty.");
+            return;
+        }
         books.add(new Book(title, author));
         save();
         System.out.println("Added: " + title);
