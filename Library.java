@@ -46,8 +46,10 @@ public class Library {
     }
 
     // ===== Student A: feature/add-list-books =====
-    public void addBook(String title, String author) {
-        // TODO
+      public void addBook(String title, String author) {
+        books.add(new Book(title, author));
+        save();
+        System.out.println("Added: " + title);
     }
 
     public void listBooks() {
