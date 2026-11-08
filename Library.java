@@ -53,7 +53,13 @@ public class Library {
     }
 
     public void listBooks() {
-        // TODO
+        if (books.isEmpty()) {
+            System.out.println("No books yet.");
+            return;
+        }
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println((i + 1) + ". " + books.get(i));
+        }
     }
 
     // ===== Student B: feature/search-remove =====
