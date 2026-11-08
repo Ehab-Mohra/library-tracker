@@ -56,10 +56,40 @@ public class Library {
 
     // ===== Student B: feature/search-remove =====
     public void searchBooks(String keyword) {
-        // TODO
+        if (keyword.isEmpty()) {
+    System.out.println("Please enter a book title to search.");
+    return;
+}
+
+boolean found = false;
+
+for (Book book : books) {
+    if (book.getTitle().toLowerCase().contains(keyword.toLowerCase())) {
+        System.out.println(book);
+        found = true;
+    }
+}
+
+if (!found) {
+    System.out.println("Book not found.");
+}
     }
 
-    public void removeBook(String title) {
-        // TODO
+
+
+public void removeBook(String title) {
+    // TODO
+}
+
+boolean removed = books.removeIf(
+    book -> book.getTitle().equalsIgnoreCase(title)
+);
+
+if (removed) {
+    save();
+    System.out.println("Book removed successfully.");
+} else {
+    System.out.println("Book not found.");
+}
     }
 }
