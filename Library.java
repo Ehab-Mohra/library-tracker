@@ -53,8 +53,7 @@ public class Library {
         }
         books.add(new Book(title, author));
         save();
-        System.out.println("Added: " + title);
-    }
+        System.out.println("Added: " + title + " by " + author);    }
 
     public void listBooks() {
         if (books.isEmpty()) {
