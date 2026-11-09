@@ -47,11 +47,22 @@ public class Library {
 
     // ===== Student A: feature/add-list-books =====
     public void addBook(String title, String author) {
-        // TODO
-    }
+        if (title.isEmpty() || author.isEmpty()) {
+            System.out.println("Title and author cannot be empty.");
+            return;
+        }
+        books.add(new Book(title, author));
+        save();
+        System.out.println("Added: " + title + " by " + author);    }
 
     public void listBooks() {
-        // TODO
+        if (books.isEmpty()) {
+            System.out.println("No books yet.");
+            return;
+        }
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println((i + 1) + ". " + books.get(i));
+        }
     }
 
     // ===== Student B: feature/search-remove =====
