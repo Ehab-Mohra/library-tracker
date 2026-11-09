@@ -73,8 +73,12 @@ public void searchBooks(String keyword) {
         System.out.println("Book not found.");
     }
 }
-
 public void removeBook(String title) {
+    if (title.isEmpty()) {
+        System.out.println("Please enter a book title to remove.");
+        return;
+    }
+
     boolean removed = books.removeIf(
         book -> book.getTitle().equalsIgnoreCase(title)
     );
@@ -82,6 +86,7 @@ public void removeBook(String title) {
     if (removed) {
         save();
         System.out.println("Book removed successfully.");
+    } else {
+        System.out.println("Book not found.");
     }
-}
-}
+}}
