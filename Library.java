@@ -100,4 +100,9 @@ public void removeBook(String title) {
     } else {
         System.out.println("Book not found.");
     }
-}}
+}
+public int countBooks() {
+    return books.size();
+}
+
+}
