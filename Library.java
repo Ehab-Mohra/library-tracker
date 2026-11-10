@@ -85,7 +85,7 @@ public void removeBook(String title) {
 
     if (removed) {
         save();
-        System.out.println("Book removed successfully.");
+        System.out.println("Removed: " + title + " (" + books.size() + " books left)");
     } else {
         System.out.println("Book not found.");
     }
