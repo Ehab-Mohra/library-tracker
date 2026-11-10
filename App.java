@@ -4,7 +4,7 @@ public class App {
 
     static void print_banner() {
         System.out.println("==============================");
-        System.out.println("        Library Tracker       ");
+        System.out.println("   Welcome to Library Tracker  ");
         System.out.println("==============================");
     }
 
