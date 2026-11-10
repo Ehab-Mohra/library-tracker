@@ -64,13 +64,40 @@ public class Library {
             System.out.println((i + 1) + ". " + books.get(i));
         }
     }
-
-    // ===== Student B: feature/search-remove =====
-    public void searchBooks(String keyword) {
-        // TODO
+// ===== Student B: feature/search-remove =====
+public void searchBooks(String keyword) {
+    if (keyword.isEmpty()) {
+        System.out.println("Please enter a book title to search.");
+        return;
     }
 
-    public void removeBook(String title) {
-        // TODO
+    boolean found = false;
+
+    for (Book book : books) {
+        if (book.getTitle().toLowerCase().contains(keyword.toLowerCase())) {
+            System.out.println(book);
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("Book not found.");
     }
 }
+public void removeBook(String title) {
+    if (title.isEmpty()) {
+        System.out.println("Please enter a book title to remove.");
+        return;
+    }
+
+    boolean removed = books.removeIf(
+        book -> book.getTitle().equalsIgnoreCase(title)
+    );
+
+    if (removed) {
+        save();
+        System.out.println("Removed: " + title + " (" + books.size() + " books left)");
+    } else {
+        System.out.println("Book not found.");
+    }
+}}
